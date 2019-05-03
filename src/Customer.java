@@ -31,7 +31,7 @@ class Customer {
         while (enumRentals.hasMoreElements()) {
             Rental rental = (Rental) enumRentals.nextElement();
             //determine amounts for rental line
-            double thisAmount = amountFor(rental);
+            double thisAmount = rental.getMovie().amountFor(rental.getMovie(), rental);
             // add frequent renter points
             frequentRenterPoints++;
             // add bonus for a two day new release rental
@@ -45,26 +45,6 @@ class Customer {
         result += "Amount owed is " + totalAmount + "\n";
         result += "You earned " + frequentRenterPoints + " frequent renter points";
         return result;
-    }
-
-    private double amountFor(Rental each) {
-        double thisAmount = 0;
-        switch (each.getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-                thisAmount += 2;
-                if (each.getDaysRented() > 2)
-                    thisAmount += (each.getDaysRented() - 2) * 1.5;
-                break;
-            case Movie.NEW_RELEASE:
-                thisAmount += each.getDaysRented() * 3;
-                break;
-            case Movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (each.getDaysRented() > 3)
-                    thisAmount += (each.getDaysRented() - 3) * 1.5;
-                break;
-        }
-        return thisAmount;
     }
 
 }

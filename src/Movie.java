@@ -21,4 +21,8 @@ public class Movie {
     public String getTitle() {
         return title;
     }
+
+    public double amountFor(Movie movie, Rental rental) {
+        return 0;
+    }
 }
