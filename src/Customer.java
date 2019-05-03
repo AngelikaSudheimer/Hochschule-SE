@@ -29,10 +29,9 @@ class Customer {
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
         while (enumRentals.hasMoreElements()) {
-            double thisAmount = 0;
             Rental each = (Rental) enumRentals.nextElement();
             //determine amounts for each line
-            thisAmount = amountFor(each);
+            double thisAmount = amountFor(each);
             // add frequent renter points
             frequentRenterPoints++;
             // add bonus for a two day new release rental
