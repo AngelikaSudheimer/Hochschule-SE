@@ -33,7 +33,7 @@ class Customer {
             Movie movie = rental.getMovie();
             totalAmount = movie.amountFor(movie, rental);
             frequentRenterPoints += movie.frequentRenter(movie, rental);
-            result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + totalAmount + "\n";
+            result += "\t" + movie.getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + totalAmount + "\n";
         }
         result += "Amount owed is " + totalAmount + "\n";
         result += "You earned " + frequentRenterPoints + " frequent renter points";
