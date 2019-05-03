@@ -25,4 +25,8 @@ public class Movie {
     public double amountFor(Movie movie, Rental rental) {
         return 0;
     }
+
+    public int frequentRenter(Movie movie, Rental rental) {
+        return 0;
+    }
 }

@@ -32,9 +32,7 @@ class Customer {
             Rental rental = (Rental) enumRentals.nextElement();
             Movie movie = rental.getMovie();
             double thisAmount = movie.amountFor(movie, rental);
-            frequentRenterPoints++;
-            if ((movie.getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
-                frequentRenterPoints++;
+            frequentRenterPoints += movie.frequentRenter(movie, rental);
             result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + thisAmount + "\n";
             totalAmount += thisAmount;
         }

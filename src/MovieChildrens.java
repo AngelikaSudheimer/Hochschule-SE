@@ -11,4 +11,9 @@ public class MovieChildrens extends Movie {
             thisAmount += (rental.getDaysRented() - 3) * 1.5;
         return thisAmount;
     }
+
+    @Override
+    public int frequentRenter(Movie movie, Rental rental) {
+        return 1;
+    }
 }
