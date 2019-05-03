@@ -13,6 +13,10 @@ class Customer {
         rentals.addElement(arg);
     }
 
+    public Vector getRentals() {
+        return rentals;
+    }
+
     public String getName() {
         return name;
     }
